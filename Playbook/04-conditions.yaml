@@ -22,7 +22,7 @@
      register: out
 
    - name: "Print load average"
-     debug: "Load Average = {{out.stdout}}"
+     debug: Load Average=out.stdout
      
 
    - name: Send Load Average to slack
