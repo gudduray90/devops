@@ -13,7 +13,7 @@
 
 
    - name: Run on RedHat
-     shell: apt-get update
+     shell: yum makecache
      when: ansible_distribution == "RedHat"
 
 
