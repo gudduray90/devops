@@ -22,7 +22,7 @@
      register: out
 
    - name: Send Load Average to slack
-     when: out.stdout > 1
+     when: out.stdout > 0.00
      slack:
       token: TS46SULA2/BRRP0LJU9/1G5dtRDrpnSX3MnNfGxFufcF
       msg: "Hello"
