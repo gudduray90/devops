@@ -1,0 +1,5 @@
+- name: This is my first playbook
+  hosts:
+  tasks:
+   debug:
+    msg: "Hi, I am guddu and this is my first playbook."
