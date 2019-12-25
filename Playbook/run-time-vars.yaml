@@ -8,11 +8,13 @@
    - name: Declare a variable with set_fact module
      set_fact:
       URL: google.com
-      LOAD: "{{out.stdout.split(':') | last}}"
+      LOAD_ALL: "{{out.stdout.split(':') | last}}"
+   - set_fact:
+      LOAD: "{{LOAD_ALL.split(',')}}"
 
 - name: Access the variables from previous task
   hosts: all
   tasks:
    - name: Acess variable from previous task
      debug:
-      msg: "URL = {{URL}}, load average = {{LOAD}}"
+      msg: "URL = {{URL}}, load average = {{LOAD[0..2]}}"
