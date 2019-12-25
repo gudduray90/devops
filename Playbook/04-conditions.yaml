@@ -21,11 +21,11 @@
      shell: "uptime | awk -F : '{print $NF}' | awk -F , '{print $1}' | awk -F . '{print $1}' | sed -s 's/ //g'"
      register: out
 
-   - name: "Print load average"
-     hosts: all
-     tasks:
-     debug:
-       msg: "Load Average = {{out.stdout}}"
+- name: "Print load average"
+  hosts: all
+  tasks:
+   debug:
+     msg: "Load Average = {{out.stdout}}"
      
 
    - name: Send Load Average to slack
