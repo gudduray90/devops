@@ -1,0 +1,81 @@
+- name: "Demo on vars on play level variables"
+  hosts: all
+  vars:
+          URL: hello.google.com
+  tasks:
+          - name: "Demo on play level variables"
+            debug:
+                    msg: "URL = {{URL}}"
+
+
+
+- name: "Demo on vars with task variables"
+  hosts: all
+  tasks:
+          - name: "Demo on task level variables"
+            debug:
+                    msg: "URL = {{URL}}"
+            vars:
+                    URL: task.google.com
+
+
+          - name: Access variable from previous task
+            debug:
+                    msg: "URL = {{URL}}"
+
+### 1. Variables declared in one task can not be accessed on another
+### 2. This task is going to be failure because of variable is not available and it exit here itself.
+### 3. In order to ignore this error and processed further we can enable ignore_error: True
+
+            ignore_errors: True
+          - name: Say Hello from echo command
+            shell: echo HELLO
+
+
+- name: Variable from prompt
+  hosts: all
+  vars_prompt:
+          - prompt: Enter the URL
+            name: URL
+            private: no
+  tasks:
+          - name: Demo on variables prompt
+            debug:
+                    msg: "URL = {{URL}}"
+
+- name: Variables from files
+  hosts: all
+  vars_files:
+          - vars01.yml
+  tasks:
+          - name: "Demo on variables files"
+            debug:
+                    msg: "URL = {{URL}}"
+
+
+- name: Demo on vars precedence
+  hosts: all
+  #  vars:
+  #       URL: vars.googe.com
+  vars_prompt:
+          - name: URL1
+            prompt: Enter URL1 ?
+            private: no
+  vars_files:
+          - vars01.yml
+  vars:
+          URL1: vars.googe.com
+  tasks:
+          - name: Demo on vars precedence
+            debug:
+                    msg: "URL = {{URL1}}"
+            vars:
+                    URL1: tasks.google.com
+
+
+
+### 1. vars_file overrides vars and vars_prompt as well
+### 2. vars_prompt overrides vars
+### 3. Task variables overrides play variables
+### 4. Variables from inventery can be overriden by vars also.
+### 5. Variables from cli (ansible-playbook playbook/demo1.yml - URL1= cli.google.com)
