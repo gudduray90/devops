@@ -1,6 +1,10 @@
 - name: Demo on Run time variables
   hosts: all
   tasks:
+   - name: Get load average
+     shell: uptime
+     register: out
+
    - name: Declare a variable with set_fact module
      set_fact:
       URL: google.com
@@ -10,4 +14,4 @@
   tasks:
    - name: Acess variable from previous task
      debug:
-      msg: "URL = {{URL}}"
+      msg: "URL = {{URL}}, load average = {{out}}"
