@@ -12,9 +12,9 @@
      when: ansible_distribution == "Ubuntu"
 
 
-   - name: Run on Ec2-user
+   - name: Run on RedHat
      shell: apt-get update
-     when: ansible_distribution == "Ec2-user"
+     when: ansible_distribution == "RedHat"
 
 
    - name: Check load average
