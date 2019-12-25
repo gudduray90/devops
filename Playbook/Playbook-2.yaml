@@ -66,16 +66,32 @@
   vars:
           URL1: vars.googe.com
   tasks:
-          - name: Demo on vars precedence
-            debug:
-                    msg: "URL = {{URL1}}"
-            vars:
-                    URL1: tasks.google.com
+   - name: Demo on vars precedence
+     debug:
+      msg: "URL = {{URL1}}"
+     vars:
+      URL1: tasks.google.com
+   - name: Variable from inventory
+     debug:
+      msg: "URL = {{URL1}}"
+   - name: Fact Print
+     debug:
+      msg: "OS = {{ansible_distribution}}"
+   - name: Custom Facts
+     debug:
+      msg: "Project Name = {{ansible_local.sample.sample.project_name}}"
 
-
+## In order to define local facts, Go to node and follow following steps
+## mkdir -p /etc/ansible/facts.d
+## cd /etc/ansible/facts.d
+## cat sample.fact
+##      [sample]
+##       project_name=DEMO
 
 ### 1. vars_file overrides vars and vars_prompt as well
 ### 2. vars_prompt overrides vars
 ### 3. Task variables overrides play variables
 ### 4. Variables from inventery can be overriden by vars also.
-### 5. Variables from cli (ansible-playbook playbook/demo1.yml - URL1= cli.google.com)
+### 5. Variables from cli is the highest priority variables can overriden all (ansible-playbook playbook/demo1.yml -e URL1= cli.google.com)
+### 6. Details about the host  are going to be collected by ansible and those details we call it as facts.
+### For this enable gather_facts: true in play.
