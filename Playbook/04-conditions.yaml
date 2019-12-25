@@ -20,10 +20,8 @@
    - name: Check load average
      shell: "uptime | awk -F : '{print $NF}' | awk -F , '{print $1}' | awk -F . '{print $1}' | sed -s 's/ //g'"
      register: out
-     set_facts:
-      load_all: "{{out.stdout}}"
      debug:
-       msg: "Load = {{load_all}}"
+       msg: "Load Average = {{out.stdout}}"
 
    - name: Send Load Average to slack
      when: out.stdout > 0.00
