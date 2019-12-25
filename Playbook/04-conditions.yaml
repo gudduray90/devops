@@ -22,7 +22,8 @@
      register: out
 
    - name: Print load average
-     debug: Load Average=out.stdout_lines
+     debug: 
+       var: out.stdout_lines
      
 
    - name: Send Load Average to slack
