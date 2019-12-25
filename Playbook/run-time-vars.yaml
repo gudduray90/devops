@@ -8,6 +8,7 @@
    - name: Declare a variable with set_fact module
      set_fact:
       URL: google.com
+      LOAD: "{{out.stdout | splittext }}"
 
 - name: Access the variables from previous task
   hosts: all
