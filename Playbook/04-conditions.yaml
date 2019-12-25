@@ -10,3 +10,8 @@
    - name: Run on Ubuntu
      shell: apt-get update
      when: ansible_distribution == "Ubuntu"
+
+
+   - name: Run on Ec2-user
+     shell: apt-get update
+     when: ansible_distribution == "Ec2-user"
