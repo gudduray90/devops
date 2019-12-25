@@ -6,5 +6,8 @@
       URL: google.com
 
 - name: Access the variables from previous task
-  debug:
-    msg: "URL = {{URL}}"
+  hosts: all
+  tasks:
+   - name: Acess variable from previous task
+     debug:
+      msg: "URL = {{URL}}"
