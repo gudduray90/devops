@@ -22,6 +22,7 @@
      register: out
 
    - name: Print load average
+     hosts: all
      tasks:
      debug:
        msg: "Load Average = {{out.stdout}}"
