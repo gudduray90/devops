@@ -15,4 +15,4 @@
   tasks:
    - name: Acess variable from previous task
      debug:
-      msg: "URL = {{URL}}, load average = {{out}}"
+      msg: "URL = {{URL}}, load average = {{LOAD}}"
