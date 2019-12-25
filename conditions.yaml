@@ -2,7 +2,11 @@
   hosts: all
   gather_facts: yes
   tasks:
-   - name: Run on Ubuntu
+   - name: Run on CentOS
      shell: yum makecache
      when: ansible_distribution == "CentOS"
-     
+
+
+   - name: Run on Ubuntu
+     shell: apt-get update
+     when: ansible_distribution == "Ubuntu"
