@@ -17,4 +17,4 @@
   tasks:
    - name: Acess variable from previous task
      debug:
-      msg: "URL = {{URL}}, load average = {{LOAD[0..2]}}"
+      msg: "URL = {{URL}}, load average = {{LOAD[0]}}"
