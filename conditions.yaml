@@ -1,0 +1,8 @@
+- name: Demo on conditions
+  hosts: all
+  gather_facts: yes
+  tasks:
+   - name: Run on Ubuntu
+     shell: yum makecache
+     when: ansible_distribution == "CentOS"
+     
