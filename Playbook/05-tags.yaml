@@ -3,8 +3,7 @@
   tags:
    - web
   tasks:
-   debug: 
-    msg: "Welcome to web server"
+   - debug: msg="Welcome to web server"
 
 
 - name: Demo on tags
@@ -12,5 +11,4 @@
   tags:
    - app
   tasks:
-   debug: 
-    msg: "Welcome on app server"
+   - debug: msg="Welcome on app server"
