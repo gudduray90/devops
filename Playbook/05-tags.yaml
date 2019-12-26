@@ -12,3 +12,11 @@
    - app
   tasks:
    - debug: msg="Welcome on app server"
+
+
+
+
+## Tags can be on play level or tags can be on task level
+## Tags are used to run few plays or tasks based on the given tags
+## If no tags are given then all tasks/plays will run
+
