@@ -3,7 +3,7 @@
   tasks:
    - name: Print multipls values
      debug:
-      msg: "Hellp , {{item}}"
+      msg: "Hell0 , {{item}}"
      loop:
       - Keishna
       - Radhe
