@@ -23,7 +23,7 @@
 
    - name: Print load average
      debug: 
-       msg: "load average = {{out.stdout_lines}}"
+       var: out.stdout_lines
      
 
    - name: Send Load Average to slack
