@@ -8,3 +8,16 @@
       - Keishna
       - Radhe
       - Mohan
+
+## Above example is for a simple list.
+
+- name: Demo is standard loops for hash
+  hosts: all
+  tasks:
+   - name: Print hash value
+     debug:
+      msg: "Hello {{item.name}} , your email is {{item.email}}"
+     loop:
+      - {name: "Krishna", email: "krishna@gmail.com"}
+      - {name: "Radhe", email: "radhe@gmail.com"}
+      
