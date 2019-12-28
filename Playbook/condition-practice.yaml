@@ -85,7 +85,7 @@
       
 
     - name: Installing zlib and vim packagesc
-    #  become: "yes"
+      become: "yes"
       package:
         name: "{{item}}"
         state: present
