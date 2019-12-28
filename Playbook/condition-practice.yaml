@@ -12,7 +12,7 @@
     
     - debug:
         msg: "File does not exist"
-      when: status_result.stat.exists == false
+      when: status_result.stat == false
 
 #    - name: Create File if not exist
 #      file:
