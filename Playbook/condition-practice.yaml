@@ -40,8 +40,7 @@
       when: dir_status.stat.exists == false
 
     - name: create test dir
-      stat:
-        command: mkdir -p /tmp/test
+      command: mkdir -p /tmp/test
     - debug:
         msg: "Test dir created"
       when: dir_status.stat.exists == false
