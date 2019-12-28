@@ -29,7 +29,7 @@
   tasks:
     - name: Check dir exist or not
       stat:
-        path: /tmp/
+        path: /tmp/test
       register: dir_status
     - debug:
         msg: "Dir exist"
