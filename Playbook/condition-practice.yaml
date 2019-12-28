@@ -15,7 +15,7 @@
 - name: "Create file if not exist"
   hosts: all
   file:
-    state: touch
+    stat: touch
     path: /tmp/test.txt
     owner: root
     group: root
