@@ -32,4 +32,13 @@
       token: TS46SULA2/BRRP0LJU9/1G5dtRDrpnSX3MnNfGxFufcF
       msg: "Hello"
 
- 
+## Check file status
+
+- name: Check file exist or not
+  hosts: all
+  tasks:
+    - name: Check test.txt exist or not
+        stat:
+          path: /tmp/test.txt
+        register: status
+    - debug: var=status    
