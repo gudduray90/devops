@@ -12,7 +12,7 @@
     
     - debug:
         msg: "File does not exist"
-      when: status_result.stat
+      when: status_result.stat.exist == false
 
 #    - name: Create File if not exist
 #      file:
@@ -36,7 +36,9 @@
       when: dir_status.stat.isdir    
 
 
-  
+  - name: Create file if not exist
+    stat:
+      path: /tmp/
 
 
      
