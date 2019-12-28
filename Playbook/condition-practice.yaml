@@ -17,7 +17,7 @@
     - name: Create File if not exist
       stat:
         path: /tmp/
-        shell: touch test.txt
+        command: touch test.txt
     - debug:
         msg: "File created"
       when: status_result.stat == false 
