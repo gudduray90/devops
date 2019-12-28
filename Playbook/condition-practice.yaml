@@ -79,6 +79,25 @@
       when: mario_status.stat.exists == true
 
 
+    - name: Installing zlib package
+      become: yes
+      vars:
+        package_list:
+          - zlib
+          - vim
+      tasks:
+        - name: Installing packages
+          package:
+            name: {{item}}
+            state: present
+          with_item: "{{package_list}}"
+          when: mario_status.stat.exists    
+
+
+
+
+
+
 
 
 
