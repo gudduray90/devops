@@ -36,9 +36,6 @@
       when: dir_status.stat.isdir    
 
 
-  - name: Create file if not exist
-    stat:
-      path: /tmp/
 
 
      
