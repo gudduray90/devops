@@ -72,9 +72,8 @@
 
     - name: Create Mario file
       file:
-        stat:
-          state: touch
-          path: /tmp/marioc
+        state: touch
+        path: /tmp/mario
     - debug:
         msg: "File created"
       when: mario_status.stat.exists == true
