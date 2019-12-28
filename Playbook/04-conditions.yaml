@@ -36,9 +36,10 @@
 
 - name: Check file exist or not
   hosts: all
+  gather_facts: false
   tasks:
     - name: Check test.txt exist or not
-        stat:
-          path: /tmp/test.txt
-        register: status
+      stat:
+        path: /tmp/test.txt
+      register: status
     - debug: var=status    
