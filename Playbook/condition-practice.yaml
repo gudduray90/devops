@@ -15,9 +15,8 @@
       when: status_result.stat == false
 
     - name: Create File if not exist
-      stat:
-        path: /tmp/
-        command: touch test.txt
+      stat: touch
+        path: /tmp/test.txt
     - debug:
         msg: "File created"
       when: status_result.stat == false 
