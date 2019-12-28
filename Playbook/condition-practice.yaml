@@ -2,7 +2,7 @@
 
 - name: Check file exist or not
   hosts: all
- # gather_facts: false
+  gather_facts: false
   tasks:
     - name: Check test.txt exist or not
       stat:
