@@ -91,7 +91,7 @@
             name: {{item}}
             state: present
           with_item: "{{package_list}}"
-          when: mario_status.stat.exists    
+          when: mario_status.stat.exists == true  
 
 
 
