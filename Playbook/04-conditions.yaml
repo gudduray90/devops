@@ -52,4 +52,4 @@
     owner: root
     group: root
     mode: 0755
-  whene: status.stat.exists == false 
+  when: status.stat.exists == false 
