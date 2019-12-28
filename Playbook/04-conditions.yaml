@@ -32,24 +32,4 @@
       token: TS46SULA2/BRRP0LJU9/1G5dtRDrpnSX3MnNfGxFufcF
       msg: "Hello"
 
-## Check file status
 
-- name: Check file exist or not
-  hosts: all
-  gather_facts: false
-  tasks:
-    - name: Check test.txt exist or not
-      stat:
-        path: /tmp/test.txt
-      register: status
-    - debug: var=status   
-
-- name: "Create file if not exist"
-  hosts: all
-  file:
-    state: touch
-    path: /tmp/test.txt
-    owner: root
-    group: root
-    mode: 0755
-  when: status.stat.exists == false 
