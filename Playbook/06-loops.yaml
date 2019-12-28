@@ -25,6 +25,9 @@
   hosts: all
   tasks:
     - name: "Installing VSFTPD"
-      yum: name="vsftpd" stat=present
+      yum: name=vsftpd stat=present
     - name: "Installing tree"
-      yum: name="tree" stat=present
+      yum: name=tree stat=present
+      
+
+
