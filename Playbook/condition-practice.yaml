@@ -71,9 +71,10 @@
       when: mario_status.stat.exists == false
 
     - name: Create Mario file
-      stat:
-        path: /tmp/mario
-        state: present
+      file:
+        stat:
+          stat: touch
+          path: /tmp/mario
     - debug:
         msg: "File created"
       when: mario_status.stat.exists == true
