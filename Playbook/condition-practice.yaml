@@ -33,7 +33,10 @@
       register: dir_status
     - debug:
         msg: "Dir does not exist"
-      when: dir_status.stat    
+      when: dir_status.stat.isdir    
+
+
+  
 
 
      
