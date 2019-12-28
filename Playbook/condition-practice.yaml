@@ -1,5 +1,3 @@
-## Check file status
-
 - name: Check file exist or not
   hosts: all
   gather_facts: false
@@ -10,11 +8,18 @@
       register: status_result
     - debug:
         msg: "File exist"
-      when: status_result.stat.exists
-
+      when: status_result.stat.exists == true
 
     - debug:
         msg: "File does not exist"
+      when: status_result.stat == false
+
+    - name: Create File if not exist
+      stat:
+        path: /tmp/
+        shell: touch test.txt
+    - debug:
+        msg: "File created"
       when: status_result.stat == false 
 
      
