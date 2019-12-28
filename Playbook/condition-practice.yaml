@@ -8,11 +8,11 @@
       register: status_result
     - debug:
         msg: "File exist"
-      when: status_result.stat.exists
+      when: status_result.stat.existsc
     
     - debug:
         msg: "File does not exist"
-      when: status_result.stat == false
+      when: status_result.stat.exists == false
 
     - name: Create File if not exist
       file:
