@@ -42,7 +42,6 @@
       stat:
         path: /tmp/test.txt
       register: status
-
     - debug: var=status   
 
 - name: Create file if not exist
