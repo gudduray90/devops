@@ -8,7 +8,7 @@
       register: status_result
     - debug:
         msg: "File exist"
-      when: status_result.stat.existsc
+      when: status_result.stat.exists
     
     - debug:
         msg: "File does not exist"
