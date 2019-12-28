@@ -80,17 +80,17 @@
 
 
     - name: Installing zlib package
-      become: yes
       vars:
         package_list:
           - zlib
           - vim
       tasks:
         - name: Installing packages
+          become: "yes"
           package:
             name: {{item}}
             state: present
-          with_item: "{{package_list}}"
+          with_items: "{{package_list}}"
           when: mario_status.stat.exists == true  
 
 
