@@ -5,17 +5,16 @@
   gather_facts: false
   tasks:
     - name: Check test.txt exist or not
+      hosts: all
       stat:
         path: /tmp/test.txt
-      register: status
-    - debug: var=status   
+      register: status_result
+    - debug:
+        msg: "File exist"
+      when: status_result.stat.exists == true
+
+    - debug:
+        msg: "File does not exist"
+      when: status_result.stat == false  
 
 
-
-- name: Create file if not exist
-  hosts: all
-  file:
-    state: touch
-    path: /tmp/test.txt
-    
-  when: status.stat.exists == false 
