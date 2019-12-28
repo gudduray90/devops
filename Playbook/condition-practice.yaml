@@ -49,7 +49,7 @@
 
 - name: Print info about my play
   hosts: all
-  gather_facts: 'no'
+  gather_facts: flase
   tasks:
     - name: print hostsname
       debug:
