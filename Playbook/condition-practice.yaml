@@ -53,7 +53,33 @@
   tasks:
     - name: print hostsname
       debug:
-        msg: "it's me , {{ ansible_hostname }}"        
+        msg: "it's me , {{ ansible_hostname }}"   
+
+
+
+##Write a playbook to install ‘zlib’ and ‘vim’ on all hosts if the file ‘/tmp/mario’ exists on the system
+
+- name: check mario file exist or not
+  hosts: all
+  tasks:
+    - name: Check file status
+      stat:
+        path: /tmp/mario
+      register: mario_status
+    - debug:
+        msg: "Mario file does not exist"
+      when: mario_status.stat.exist == false
+
+    - name: Create Mario file
+      stat:
+        path: /tmp/mario
+        state: present
+    - debug:
+        msg: "File created"
+      when: mario_status.stat.exist == true
+
+
+
 
 
 
