@@ -12,7 +12,7 @@
 
 
 
-- name: "Create file if not exist"
+- name: Create file if not exist
   hosts: all
   file:
     state: touch
