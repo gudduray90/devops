@@ -63,10 +63,9 @@
   hosts: all
   tasks:
     - name: Check file status
-      file:
-        stat:
-          path: /tmp/mario
-        register: mario_status
+      stat:
+        path: /tmp/mario
+      register: mario_status
     - debug:
         msg: "Mario file does not exist"
       when: mario_status.stat.exists == false
