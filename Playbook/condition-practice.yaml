@@ -49,7 +49,7 @@
 
 - name: Print info about my play
   hosts: all
-  gather_facts: false
+  gather_facts: 'no'
   tasks:
     - name: print hostsname
       debug:
