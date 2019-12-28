@@ -14,13 +14,13 @@
         msg: "File does not exist"
       when: status_result.stat
 
-    - name: Create File if not exist
-      file:
-        state: touch
-        path: /tmp/test.txt
-    - debug:
-        msg: "File created"
-      when: status_result.stat == false 
+#    - name: Create File if not exist
+#      file:
+#        state: touch
+#        path: /tmp/test.txt
+#    - debug:
+#        msg: "File created"
+#      when: status_result.stat == false 
 
 ## Now Check dir is exist or not
 
