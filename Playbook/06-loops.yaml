@@ -24,10 +24,16 @@
 - name: Install vsftpd and tree
   hosts: all
   tasks:
+    - name:
+      debug: msg "{{nsible_distribution == "RedHat"}}"
     - name: "Installing VSFTPD"
-      yum: name=vsftpd stat=present
+      yum: 
+        name: vsftpd 
+        stat: present
     - name: "Installing tree"
-      yum: name=tree stat=present
-      
+      yum: 
+        name: tree 
+        stat: present
+
 
 
