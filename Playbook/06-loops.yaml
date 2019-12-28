@@ -25,7 +25,6 @@
   hosts: all
   tasks:
     - name: "Installing VSFTPD"
-      apt: name="vsftpd" stat="present"
+      yum: name="vsftpd" stat="present"
     - name: "Installing tree"
-      apt: name="tree" stat="present"
-      
+      yum: name="tree" stat="present"
