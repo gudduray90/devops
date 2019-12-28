@@ -5,7 +5,6 @@
   gather_facts: false
   tasks:
     - name: Check test.txt exist or not
-      hosts: all
       stat:
         path: /tmp/test.txt
       register: status_result
