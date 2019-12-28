@@ -82,9 +82,10 @@
         msg: "File created"
       when: mario_status.stat.exists == true
 
+      
 
-    - name: Installing zlib and vim packages
-      become: "yes"
+    - name: Installing zlib and vim packagesc
+    #  become: "yes"
       package:
         name: "{{item}}"
         state: present
