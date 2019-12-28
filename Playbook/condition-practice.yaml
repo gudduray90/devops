@@ -15,9 +15,7 @@
 - name: "Create file if not exist"
   hosts: all
   file:
-    stat: touch
+    state: touch
     path: /tmp/test.txt
-    owner: root
-    group: root
-    mode: 0755
+    
   when: status.stat.exists == false 
