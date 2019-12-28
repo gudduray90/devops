@@ -20,4 +20,12 @@
      loop:
       - {name: "Krishna", email: "krishna@gmail.com"}
       - {name: "Radhe", email: "radhe@gmail.com"}
+
+- name: Install vsftpd and tree
+  hosts: all
+  tasks:
+    - name: "Installing VSFTPD"
+      apt: name="vsftpd" stat="present"
+    - name: "Installing tree"
+      apt: name="tree" stat="present"
       
