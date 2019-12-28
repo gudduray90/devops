@@ -44,7 +44,16 @@
     - debug:
         msg: "Test dir created"
       when: dir_status.stat.exists == false
-        
+
+
+
+- name: Print info about my play
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: print hostsname
+      debug:
+        msg: "it's me , {{ ansible_hostname }}"        
 
 
 
