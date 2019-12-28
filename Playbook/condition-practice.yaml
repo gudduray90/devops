@@ -88,7 +88,7 @@
         - name: Installing packages
           become: "yes"
           package:
-            name: {{item}}
+            name: "{{item}}"
             state: present
           with_items: "{{package_list}}"
           when: mario_status.stat.exists == true  
