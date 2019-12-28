@@ -9,7 +9,7 @@
     - debug:
         msg: "File exist"
       when: status_result.stat.exists == true
-
+    
     - debug:
         msg: "File does not exist"
       when: status_result.stat == false
@@ -21,6 +21,20 @@
     - debug:
         msg: "File created"
       when: status_result.stat == false 
+
+## Now Check dir is exist or not
+
+- name: check test dir
+  hosts: all
+  tasks:
+    - name: Check dir exist or not
+      stat:
+        path: /tmp/
+      register: dir_status
+    - debug:
+        msg: "Dir does not exist"
+      when: dir_status.stat    
+
 
      
 
