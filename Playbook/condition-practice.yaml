@@ -61,6 +61,10 @@
 
 - name: check mario file exist or not
   hosts: all
+  vars:
+    package_list:
+      - zlib
+      - vim
   tasks:
     - name: Check file status
       stat:
@@ -80,18 +84,12 @@
 
 
     - name: Installing zlib package
-      vars:
-        package_list:
-          - zlib
-          - vim
-      tasks:
-        - name: Installing packages
-          become: "yes"
-          package:
-            name: "{{item}}"
-            state: present
-          with_items: "{{package_list}}"
-          when: mario_status.stat.exists == true  
+      become: "yes"
+      package:
+        name: "{{item}}"
+        state: present
+      with_items: "{{package_list}}"
+      when: mario_status.stat.exists == true  
 
 
 
