@@ -12,8 +12,11 @@
         msg: "File exist"
       when: status_result.stat.exists
 
+
     - debug:
         msg: "File does not exist"
-      when: status_result.stat == false  
+      when: status_result.stat == false 
+
+     
 
 
