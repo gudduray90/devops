@@ -32,8 +32,12 @@
         path: /tmp/
       register: dir_status
     - debug:
-        msg: "Dir does not exist"
-      when: dir_status.stat.isdir    
+        msg: "Dir exist"
+      when: dir_status.stat.isdir 
+
+    - debug: 
+        msg: dir does not exist
+      when: dir_status.stat.exists == false
 
 
 
