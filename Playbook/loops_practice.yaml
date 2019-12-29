@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   become_user: root
-  task:
+  tasks:
     user: 
       name: "{{ item }}"
       state: present
