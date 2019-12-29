@@ -1,7 +1,7 @@
-- name: Add multiple users
+- name: "Add multiple users"
   hosts: all
   become: yes
-  become_method: sudo
+  become_method: sudoc
   user: 
     name: "{{ item }}"
     state: present
