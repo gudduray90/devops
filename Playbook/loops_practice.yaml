@@ -1,6 +1,7 @@
 - name: Add multiple users
   hosts: all
   become: yes
+  become_method: sudo
   user: 
     name: "{{ item }}"
     state: present
