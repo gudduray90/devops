@@ -1,5 +1,6 @@
 - name: Add multiple users
   hosts: all
+  become: yes
   user: 
     name: "{{ item }}"
     state: present
