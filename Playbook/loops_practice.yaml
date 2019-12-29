@@ -1,10 +1,10 @@
 - name: Add multiple users
   hosts: all
   user: 
-    name: "{{item}}"
+    name: "{{ item }}"
     state: present
     groups: "root"
-  loop:
+  with_items:
     - krishna
     - guddu
     - shyam
