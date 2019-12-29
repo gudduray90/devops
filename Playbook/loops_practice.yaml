@@ -1,7 +1,6 @@
-- name: "Add multiple users"
+- name: Add multiple users
   hosts: all
   become: yes
-  become_user: root
   tasks:
     user: 
       name: "{{ item }}"
