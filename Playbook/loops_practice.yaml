@@ -2,11 +2,12 @@
   hosts: all
   become: yes
   become_user: root
-  user: 
-    name: "{{ item }}"
-    state: present
-    groups: root
-  with_items:
+  task:
+    user: 
+      name: "{{ item }}"
+      state: present
+      groups: root
+    with_items:
       - krishna
       - guddu
       - shyam
