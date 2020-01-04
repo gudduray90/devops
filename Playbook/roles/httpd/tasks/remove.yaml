@@ -2,3 +2,11 @@
   yum:
     name: httpd
     state: absent
+
+- name: Remove config file
+  file:
+    path: "{{item}}"
+    state: absent
+  loop:
+    - /etc/httpd
+    - /var/www/html/index.html
