@@ -1,0 +1,4 @@
+- name: Remove httpd services
+  yum:
+    name: httpd
+    state: absent
