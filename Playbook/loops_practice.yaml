@@ -1,7 +1,7 @@
-- name: Print hello for all loops value
+- name: "Print hello for all loops value"
   hosts: all
   tasks:
-    name: "Hello, {{ item }}"
+    name: "print hello with loop"
     debug:
       msg: "{{item}}"
     loop:
