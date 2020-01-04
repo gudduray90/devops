@@ -1,0 +1,5 @@
+- name: Webserver and app server setup
+  hosts: all
+  roles:
+    - httpd
+      when:  ansible_distribution== "RedHat" and ansible_distribution_major_version== "8"
