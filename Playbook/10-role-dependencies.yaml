@@ -1,0 +1,4 @@
+- name: demo on dependencies
+  hosts: all
+  roles:
+    - roleB
