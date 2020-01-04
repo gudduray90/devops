@@ -1,11 +1,9 @@
-- name: Add testuser1
-  user:
-    name: "testuser1"
-    state: present
-    groups: "testuser1"
-
-- name: Add testuser2
-  user:
-    name: "testuser2"
-    state: present
-    groups: "testuser2"
+- name: Print hello for all loops value
+  hosts: all
+  tasks:
+    name: "Hello, {{ item }}"
+    debug:
+      msg: "{{item}}"
+    loop:
+      - abc
+      - xyz
