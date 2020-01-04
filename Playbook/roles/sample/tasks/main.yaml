@@ -1,3 +1,4 @@
-- name: Print hello from sample task
+- name: print hello
   debug:
     msg: "Hello"
+    
