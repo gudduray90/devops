@@ -1,9 +1,8 @@
 - name: Add multiple users
-  hosts: all
   user: 
     name: "{{ item }}"
     state: present
-    groups: root
+    groups: "root"
   loop:
     - krishna
     - guddu
