@@ -2,3 +2,11 @@
   yum:
     name: httpd
     state: latest
+
+
+
+- name: Copy proxy file
+  copy:
+    src: proxy.conf
+    dest: /etc/httpd/conf.d/proxy.conf
+
