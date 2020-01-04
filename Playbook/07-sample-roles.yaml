@@ -1,4 +1,4 @@
 - name: Demo of roles
   hosts: all
-  tasks:
+  roles:
     - sample
