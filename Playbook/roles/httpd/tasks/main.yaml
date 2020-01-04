@@ -1,3 +1,4 @@
-- name: demo
-  debug:
-    msg: "Something"
+- name: Install the latest version of httpd
+  yum:
+    name: httpd
+    state: latest
