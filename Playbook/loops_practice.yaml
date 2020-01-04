@@ -6,7 +6,7 @@
       name: "{{ item }}"
       state: present
       groups: root
-    with_items:
-      - krishna
-      - guddu
-      - shyam
+  with_items:
+    - krishna
+    - guddu
+    - shyam
