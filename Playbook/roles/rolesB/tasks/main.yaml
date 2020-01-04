@@ -1,0 +1,3 @@
+- name: Print hello from roleB
+  debug:
+    msg: " Hello from roleB "
