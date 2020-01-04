@@ -3,4 +3,4 @@
   gather_facts: true
   roles:
     - role: httpd
-      when: ansible_distribution == "RedHat" and ansible_distribution_major_version c== "8"
+      when: ansible_distribution == "RedHat" and ansible_distribution_major_version == "8"
