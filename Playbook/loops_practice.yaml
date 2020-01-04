@@ -6,7 +6,7 @@
     groups: "testuser1"
 
 - name: Add testuser2
-  hosts:all
+  hosts: all
   user:
     name: "testuser2"
     state: present
