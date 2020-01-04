@@ -10,3 +10,14 @@
     src: proxy.conf
     dest: /etc/httpd/conf.d/proxy.conf
 
+- name: Download index URL
+  get_url:
+    url: "{{INDEX_URL}}"
+    dest: /var/www/html/index.html
+
+
+- name: restart httpd service
+  service:
+    name: httpd
+    state: started
+    enabled: yes
