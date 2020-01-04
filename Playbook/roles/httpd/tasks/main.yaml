@@ -1,11 +1,11 @@
 - name: Import Install task
-  include_tasks: install.yaml
+  import_tasks: install.yaml
   tags:
     - install
     - never
 
 - name: Import Install task
-  include_tasks: remove.yaml
+  import_tasks: remove.yaml
   tags:
     - remove
     - never
