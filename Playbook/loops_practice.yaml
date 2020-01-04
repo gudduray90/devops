@@ -1,12 +1,10 @@
 - name: Add testuser1
-  hosts: all
   user:
     name: "testuser1"
     state: present
     groups: "testuser1"
 
 - name: Add testuser2
-  hosts: all
   user:
     name: "testuser2"
     state: present
