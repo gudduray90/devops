@@ -17,8 +17,8 @@
   notify: Restarted HTTPD
 
 
-- name: restart httpd service
-  service:
-    name: httpd
-    state: started
-    enabled: yes
+#- name: restart httpd service
+#  service:
+#    name: httpd
+#    state: started
+#    enabled: yes
