@@ -14,6 +14,7 @@
   get_url:
     url: "{{INDEX_URL}}"
     dest: /var/www/html/index.html
+  notify: restart httpd
 
 
 - name: restart httpd service
