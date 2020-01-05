@@ -2,3 +2,6 @@
   hosts: all
   roles:
     - rolesB
+  debug:
+    msg: "URL = {{URL}}"
+
