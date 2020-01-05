@@ -1,0 +1,7 @@
+- name: Clone a git repository
+  hosts: all
+  tasks:
+    - name: Clone git repor
+      git:
+        repo: 'https://github.com/gudduray90/devops.git'
+        dest: /tmp/ansible
