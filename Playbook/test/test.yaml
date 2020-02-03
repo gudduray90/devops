@@ -1,0 +1,6 @@
+- name: Test Job
+  hosts: all
+  tasks:
+    - debug: 
+        - msg: "Hello, This is a test job."
+        
