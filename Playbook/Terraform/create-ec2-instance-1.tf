@@ -1,6 +1,8 @@
 provider "aws" {
     #A provider is responsible for understanding API interactions and exposing resources
-    region  = "us-east-2"  
+    region  = "us-east-2"
+    access_key = "AKIAYWLTT3XVISVL5LHA"
+    secret_key = "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"  
 }
 
 resource "aws_instance" "my-first-instance" {
