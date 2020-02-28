@@ -11,6 +11,7 @@ resource "aws_instance" "my-first-instance" {
     #stores mapping and metadata information for those remote objects.
     ami             = "ami-0998bf58313ab53da"
     instance_type   = "t2.micro"
+    key_name = "App_Server"
     tags{
         Name = "Terraform-1"
     }
